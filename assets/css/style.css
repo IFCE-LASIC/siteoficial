@@ -364,7 +364,7 @@ h6 {
 #hero {
   width: 100%;
   height: calc(100vh - 70px);
-  background: url("/inicio.jpg") center center;
+  background: url("") center center;
   background-size: cover;
   position: relative;
   margin-top: 70px;
@@ -399,23 +399,8 @@ h6 {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 28px;
-  border-radius: 4px;
-  transition: 0.5s;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-#hero .btn-get-started:hover {
-  border-color: #1bac91;
-  background: #1bac91;
+.btn-get-started:hover {
+  transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
 }
 
 @media (min-width: 1024px) {
