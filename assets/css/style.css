@@ -38,7 +38,7 @@ h6 {
   background: #1bac91;
   width: 40px;
   height: 40px;
-  border-radius: 4px;
+  border-radius: 50px;
   transition: all 0.4s;
 }
 
@@ -58,6 +58,7 @@ h6 {
   opacity: 1;
 }
 
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -71,10 +72,20 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 70px;
   transition: all 0.5s;
   z-index: 997;
-  background: #000;
+  transition: all 0.5s;
+  padding: 24px 0;
+  background: transparent;
+}
+
+#header.header-transparent {
+  background: black;
+}
+
+#header.header-scrolled {
+  background: black;
+  padding: 12px;
 }
 
 #header .logo h1 {
@@ -364,16 +375,16 @@ h6 {
 #hero {
   width: 100%;
   height: calc(100vh - 70px);
-  background: url("") center center;
+  background: url("https://i.pinimg.com/originals/d6/2f/76/d62f762d08ecb0456e9f46967ba34230.jpg") center center;
   background-size: cover;
   position: relative;
   margin-top: 70px;
-  padding: 0;
+  padding: relative;
 }
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.729);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -393,14 +404,29 @@ h6 {
   color: #fff;
 }
 
-#hero h2 {
-  color: rgba(255, 255, 255, 0.7);
+#hero h5 {
+  color: white;
   margin-bottom: 35px;
   font-size: 24px;
 }
 
-.btn-get-started:hover {
-  transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+#hero .btn-get-started {
+  font-size: 36px;
+  display: inline-block;
+  padding: 4px 0;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  margin: 10px;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#hero .btn-get-started:hover {
+  padding-top: 8px;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 @media (min-width: 1024px) {
@@ -469,89 +495,59 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Team
+ Team Section
 --------------------------------------------------------------*/
-.team .member {
+#team {
+  background: #fff;
+  padding: 80px 0 60px 0;
+}
+
+#team .section-description {
+  text-align: center;
+}
+
+#team .member {
   text-align: center;
   margin-bottom: 20px;
-  background: #343a40;
-  position: relative;
+}
+
+#team .member .pic {
+  margin-bottom: 15px;
   overflow: hidden;
+  height: 260px;
 }
 
-.team .member .member-info {
-  opacity: 0;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: 0.2s;
+#team .member .pic img {
+  max-width: 100%;
 }
 
-.team .member .member-info-content {
-  position: absolute;
-  left: 50px;
-  right: 0;
-  bottom: 0;
-  transition: bottom 0.4s;
-}
-
-.team .member .member-info-content h4 {
+#team .member h4 {
   font-weight: 700;
   margin-bottom: 2px;
   font-size: 18px;
-  color: #fff;
 }
 
-.team .member .member-info-content span {
+#team .member span {
   font-style: italic;
   display: block;
   font-size: 13px;
-  color: #fff;
 }
 
-.team .member .social {
-  position: absolute;
-  left: -50px;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  transition: left ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-.team .member .social a {
-  transition: color 0.3s;
-  display: block;
-  color: #fff;
+#team .member .social {
   margin-top: 15px;
 }
 
-.team .member .social a:hover {
-  color: #1bac91;
+#team .member .social a {
+  color: #b3b3b3;
 }
 
-.team .member .social i {
+#team .member .social a:hover {
+  color: #2dc997;
+}
+
+#team .member .social i {
   font-size: 18px;
   margin: 0 2px;
-}
-
-.team .member:hover .member-info {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 212, 255, 0) 100%);
-  opacity: 1;
-  transition: 0.4s;
-}
-
-.team .member:hover .member-info-content {
-  bottom: 30px;
-  transition: bottom 0.4s;
-}
-
-.team .member:hover .social {
-  left: 0;
-  transition: left ease-in-out 0.3s;
 }
 
 /*--------------------------------------------------------------
