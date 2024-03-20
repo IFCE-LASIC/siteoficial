@@ -410,13 +410,37 @@ h6 {
   font-size: 24px;
 }
 
+#hero .social-links {
+  margin-top: 10px;
+}
+
+#hero .social-links a {
+  font-size: 24px;
+  display: inline-block;
+  color: #ffffff;
+  line-height: 1;
+  margin-right: 10px;
+  transition: 0.3s;
+
+}
+
+#hero .social-links a:hover {
+  color: white;
+  /*quando passa o mouse*/
+}
+
+#hero .social-links a:hover {
+  color: white;
+  /*quando passa o mouse*/
+}
+
 #hero .btn-get-started {
   font-size: 36px;
   display: inline-block;
   padding: 4px 0;
   border-radius: 50px;
   transition: 0.3s ease-in-out;
-  margin: 10px;
+  margin: 50px;
   width: 64px;
   height: 64px;
   text-align: center;
