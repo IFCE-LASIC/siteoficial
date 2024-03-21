@@ -375,14 +375,14 @@ h6 {
 #hero {
   width: 100%;
   height: calc(100vh);
-  background: url("https://img.freepik.com/premium-photo/computer-circuit-board-with-circuit-board-neon-colors_274326-1307.jpg?w=1380") center center  ;
+  background: url("https://i.pinimg.com/originals/d6/2f/76/d62f762d08ecb0456e9f46967ba34230.jpg") center center;
   background-size: cover;
   position: relative;
 }
 
 #hero:before {
   content: "";
-  opacity: 80%;
+  opacity: 90%;
   background: rgba(0, 0, 0, 0.729);
   position: absolute;
   bottom: 0;
@@ -409,7 +409,7 @@ h6 {
   font-size: 24px;
 }
 
-#hero .social-links {
+/* #hero .social-links {
   margin-top: 10px;
 }
 
@@ -425,13 +425,13 @@ h6 {
 
 #hero .social-links a:hover {
   color: white;
-  /*quando passa o mouse*/
+ 
 }
 
 #hero .social-links a:hover {
   color: white;
-  /*quando passa o mouse*/
-}
+  
+} */
 
 #hero .btn-get-started {
   font-size: 36px;
@@ -512,7 +512,7 @@ section {
 --------------------------------------------------------------*/
 .img-lab {
   margin-bottom: 10px;
-  margin-top:5px;
+  margin-top: 5px;
   width: 400px;
   height: auto;
 }
