@@ -80,7 +80,7 @@ h6 {
 }
 
 #header.header-transparent {
-  background: black;
+  background: transparent;
 }
 
 #header.header-scrolled {
@@ -374,16 +374,15 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 70px);
-  background: url("https://i.pinimg.com/originals/d6/2f/76/d62f762d08ecb0456e9f46967ba34230.jpg") center center;
+  height: calc(100vh);
+  background: url("https://img.freepik.com/premium-photo/computer-circuit-board-with-circuit-board-neon-colors_274326-1307.jpg?w=1380") center center  ;
   background-size: cover;
   position: relative;
-  margin-top: 70px;
-  padding: relative;
 }
 
 #hero:before {
   content: "";
+  opacity: 80%;
   background: rgba(0, 0, 0, 0.729);
   position: absolute;
   bottom: 0;
@@ -450,7 +449,7 @@ h6 {
 
 #hero .btn-get-started:hover {
   padding-top: 8px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(99, 12, 12, 0.15);
 }
 
 @media (min-width: 1024px) {
