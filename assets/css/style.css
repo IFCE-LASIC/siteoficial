@@ -409,30 +409,6 @@ h6 {
   font-size: 24px;
 }
 
-/* #hero .social-links {
-  margin-top: 10px;
-}
-
-#hero .social-links a {
-  font-size: 24px;
-  display: inline-block;
-  color: #ffffff;
-  line-height: 1;
-  margin-right: 10px;
-  transition: 0.3s;
-
-}
-
-#hero .social-links a:hover {
-  color: white;
- 
-}
-
-#hero .social-links a:hover {
-  color: white;
-  
-} */
-
 #hero .btn-get-started {
   font-size: 36px;
   display: inline-block;
@@ -513,7 +489,7 @@ section {
 .img-lab {
   margin-bottom: 10px;
   margin-top: 5px;
-  width: 400px;
+  width: 350px;
   height: auto;
 }
 
@@ -541,7 +517,7 @@ section {
 }
 
 #team .member .pic img {
-  max-width: 100%;
+  max-width: 100%; 
 }
 
 #team .member h4 {
@@ -572,6 +548,17 @@ section {
   font-size: 18px;
   margin: 0 2px;
 }
+
+@media screen and (max-width: 768px) {
+  #team .member {
+    margin-bottom: 40px;
+  }
+  
+  #team .member .pic {
+    height: auto; /* Mudar a altura para automático para que as imagens redimensionem */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Contact
