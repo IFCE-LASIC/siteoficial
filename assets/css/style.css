@@ -579,14 +579,11 @@ section {
 }
 
 .swiper-button-prev {
-  left: 0px;
-color: transparent;
+display: none;
 }
 
 .swiper-button-next {
-  right: 0px;
-  color: transparent;
-
+  display: none;
 }
 
 .swiper-pagination {
