@@ -5,11 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
-  <title>LASIC - Laboratório de Sistemas Computacionais</title>
+  <title>LASIC - Laboratório de Sistemas e Inteligência Computacional</title>
   <meta
-    content="O LASIC (Laboratório de Sistemas Computacionais) tem o objetivo de desenvolver soluções inovadoras que permitam transformar ideias em soluções para problemas enfrentados por pessoas e empresas."
+    content="O LASIC (Laboratório de Sistemas e Inteligência Computacional) tem o objetivo de desenvolver soluções inovadoras que permitam transformar ideias em soluções para problemas enfrentados por pessoas e empresas."
     name="description">
-  <meta content="Laboratório, Sistemas, Computacionais" name="keywords">
+  <meta content="Laboratório, Sistemas, Inteligencia, Computacional" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/logo/LOGO LASIC.png" rel="icon">
@@ -25,7 +25,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!--Ajusta imagens-->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> <!--biblioteca de icones-->
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> <!--biblioteca icone hero-->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link href="assets/css/variables.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
@@ -46,8 +45,14 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
           <li><a class="nav-link scrollto" href="#about">História</a></li>
-          <li><a class="nav-link scrollto" href="#project">Projetos</a></li>
-          <li><a class="nav-link scrollto" href="#equipe">Equipe</a></li>
+          <li class="dropdown"><a href="#project"><span>Projetos</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="tcc.html">Artigos e TCC's</a></li>
+              <li><a href="ic.html">Iniciação Científica</a></li>
+              <li><a href="parcerias.html">Parcerias</a></li>
+              <li><a href="evento.html">Extensão e Eventos</a></li>
+            </ul>
+          <li><a class="nav-link scrollto" href="equipe.html">Equipe</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -170,7 +175,7 @@
             data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-people-fill"></i></div>
-              <h4><a href="">Parcerias</a></h4>
+              <h4><a href="parcerias.html">Parcerias</a></h4>
               <p>O LASIC desenvolveu projetos inovadores com financiamento da EMBRAPII, atendendo às
                 demandas do setor privado. Empresas colaboraram com a execução dos projetos, proporcionando acesso a
                 novas tecnologias e enriquecendo o conhecimento prático dos alunos e professores envolvidos.</p>
@@ -181,7 +186,7 @@
             data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-calendar4-event"></i></div>
-              <h4><a href="">Extensão e Eventos</a></h4>
+              <h4><a href="evento.html">Extensão e Eventos</a></h4>
               <p> Os projetos desenvolvidos têm como objetivo estabelecer uma conexão significativa com a comunidade
                 além do campus. Ao longo do tempo, uma variedade de iniciativas foi implementada, proporcionando
                 conhecimento e benefícios a várias pessoas.</p>
@@ -192,306 +197,7 @@
 
       </div>
     </section><!-- End Services Section -->
-
-    <!-- ======= Equipe Section ======= -->
-    <!-- <section id="equipe">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>EQUIPE</h2>
-          <p class="section-description">Nosso sucesso é o resultado da colaboração e comprometimento de uma equipe
-            unida.</p>
-        </div>
-
-        <div class="row">
-          <div class="slides-1 swiper">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets/img/equipe/professor_henrique.jpg" alt=""></div>
-                    <h4>Henrique Leitão</h4>
-                    <span>Coordenador e Professor</span>
-                    <div class="social">
-                      <a href="http://lattes.cnpq.br/5390330770526314" target="_blank"><i
-                          class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets/img/equipe/luan.jpeg" alt=""></div>
-                    <h4>Luan Silva</h4>
-                    <span>Desenvolvedor Back-End</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\mh.jpg" alt=""></div>
-                    <h4>Matheus Henrique</h4>
-                    <span>Quality Assurance</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets/img/equipe/Isabelly.jpeg" alt=""></div>
-                    <h4>Isabelly Pinheiro</h4>
-                    <span>Desenvolvedora I.A.</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\deb.jpg" alt=""></div>
-                    <h4>Débora Lima</h4>
-                    <span>Desenvolvedora Front-End</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\nycolas.jpg" alt=""></div>
-                    <h4>Nycolas Vasconcelos</h4>
-                    <span>Desenvolvedor Front-End</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\herbert.jpg" alt=""></div>
-                    <h4>Herbert Silva</h4>
-                    <span>Desenvolvedor Back-End</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\henr_teixeira.jpg" alt=""></div>
-                    <h4>Henrique Teixeira</h4>
-                    <span>Desenvolvedor I.A.</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\victor_mendes.png" alt=""></div>
-                    <h4>Victor Mendes</h4>
-                    <span>Desenvolvedor Front-End</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\luiz.jpg" alt=""></div>
-                    <h4>Luiz Farias</h4>
-                    <span>Desenvolvedor Back-End</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img
-                        src="https://i.pinimg.com/originals/13/b4/08/13b408f0ad453542c0d8fa8e62602245.jpg" alt=""></div>
-                    <h4>Natanael Lino</h4>
-                    <span>Quality Assurance</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img
-                        src="https://i.pinimg.com/originals/13/b4/08/13b408f0ad453542c0d8fa8e62602245.jpg" alt=""></div>
-                    <h4>Ásafe Duarte</h4>
-                    <span>Quality Assurance</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="swiper-slide">
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img
-                        src="https://i.pinimg.com/originals/13/b4/08/13b408f0ad453542c0d8fa8e62602245.jpg" alt=""></div>
-                    <h4>Lucas Viana</h4>
-                    <span>Desenvolvedor</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img
-                        src="https://i.pinimg.com/originals/13/b4/08/13b408f0ad453542c0d8fa8e62602245.jpg" alt=""></div>
-                    <h4>Bruno Matsuyama</h4>
-                    <span>Desenvolvedor</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img
-                        src="https://i.pinimg.com/originals/13/b4/08/13b408f0ad453542c0d8fa8e62602245.jpg" alt=""></div>
-                    <h4>João Pedro</h4>
-                    <span>Desenvolvedor</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img
-                        src="https://i.pinimg.com/originals/13/b4/08/13b408f0ad453542c0d8fa8e62602245.jpg" alt=""></div>
-                    <h4>Emanuel</h4>
-                    <span>Desenvolvedor</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets\img\equipe\jonatas.jpg" alt=""></div>
-                    <h4>Jonatas Cleyton</h4>
-                    <span>Desenvolvedor Back-End</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img
-                        src="https://i.pinimg.com/originals/13/b4/08/13b408f0ad453542c0d8fa8e62602245.jpg" alt=""></div>
-                    <h4>Henrique</h4>
-                    <span>Desenvolvedor</span>
-                    <div class="social">
-                      <a href="" target="_blank"><i class="bi bi-link-45deg"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="" target="_blank"><i class="bi bi-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-          </div>
-        </div>
-      </div>
-
-    </section> -->
-    <!-- End Equipe Section -->
-
+    
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
@@ -500,30 +206,25 @@
           <h2>CONTATO</h2>
         </div>
 
-        <div>
-          <iframe style="border:0; width: 100%; height: 270px;"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.710870027409!2d-38.61391362635708!3d-3.872060396101729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c752117820684d%3A0x50bac00cac892a1d!2sInstituto%20Federal%20de%20Educa%C3%A7%C3%A3o%2C%20Ci%C3%AAncia%20e%20Tecnologia%20do%20Cear%C3%A1%20%7C%20Campus%20Maracana%C3%BA!5e0!3m2!1spt-BR!2sbr!4v1710796742865!5m2!1spt-BR!2sbr"
-            frameborder="0" allowfullscreen></iframe>
-        </div>
+        <div class="row no-gutters justify-content-center" data-aos="fade-up">
 
-        <div class="row mt-5">
-
-          <div class="col-lg-4">
+          <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Localização:</h4>
                 <p>IFCE - Bloco 3 (Ciência da Computação)</p>
                 <p>Av. Parque Central, 1315, Distrito Industrial I, Maracanaú - CE, 61939-140, Brasil</p>
+
               </div>
 
-              <div class="email">
+              <div class="email mt-4">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>lasicifce@gmail.com</p>
               </div>
 
-              <div class="phone">
+              <div class="phone mt-4">
                 <i class="bi bi-phone"></i>
                 <h4>Telefone:</h4>
                 <p> +55 (85) 99773-0961</p>
@@ -533,31 +234,11 @@
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms\contact.php" method="POST" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Carregando</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Sua mensagem foi enviada com sucesso. Obrigado!</div>
-              </div>
-              <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
-            </form>
-
+          <div class="col-lg-7 d-flex align-items-stretch">
+            <iframe style="border:0; width: 100%; height: 100%;"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.710870027409!2d-38.61391362635708!3d-3.872060396101729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c752117820684d%3A0x50bac00cac892a1d!2sInstituto%20Federal%20de%20Educa%C3%A7%C3%A3o%2C%20Ci%C3%AAncia%20e%20Tecnologia%20do%20Cear%C3%A1%20%7C%20Campus%20Maracana%C3%BA!5e0!3m2!1spt-BR!2sbr!4v1710796742865!5m2!1spt-BR!2sbr"
+              frameborder="0" allowfullscreen>
+            </iframe>
           </div>
 
         </div>
@@ -571,12 +252,15 @@
   <footer id="footer">
     <div class="container">
       <h3>LASIC</h3>
-      <h3>Laboratório de Sistemas Computacionais</h3>
+      <h3>Laboratório de Sistemas e Inteligência Computacional</h3>
       <p>Entre em contato para desenvolvermos o seu projeto</p>
       <div class="social-links">
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href="#" class="gmail"><i class="bi bi-envelope"></i></a>
+        <a href="https://www.instagram.com/lasicifce" target="_blank" class="instagram"><i
+            class="bx bxl-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=558597730961" target="_blank" class="Whatsapp"><i
+            class="bi bi-whatsapp"></i></a>
+        <!-- <a href="#" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
+        <a href="mailto:lasicifce@gmail.com" target="_blank" class="gmail"><i class="bi bi-envelope"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -588,32 +272,6 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var mySwiper = new Swiper('.swiper', {
-
-        loop: true,
-
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        autoplay: {
-          delay: 5000, // define o tempo de atraso em milissegundos
-          disableOnInteraction: false,
-        },
-
-      });
-    });
-  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
