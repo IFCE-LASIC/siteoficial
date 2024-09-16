@@ -172,4 +172,36 @@
     });
   });
 
+
+//  ===== Chat =====
+let chatPop = select('#chat-pop')
+const closeChatPop = select(".chat-popup-close")
+let dontWannaHelp = false
+
+if (chatPop) {
+  const toggleChatPop = () => {
+    if (window.scrollY > 950 && !dontWannaHelp) {
+      chatPop.classList.add('active')
+      chatPop.addEventListener('mouseenter', (who)=>{
+        closeChatPop.classList.add("active")
+        closeChatPop.addEventListener("click",()=>{
+          chatPop.classList.remove('active')
+          closeChatPop.classList.remove('active')
+          dontWannaHelp = true
+        })
+      })
+      chatPop.addEventListener("mouseleave", ()=>{
+        closeChatPop.classList.remove("active")
+      })
+    } else {
+      chatPop.classList.remove('active')
+    }
+  }
+  window.addEventListener('load', toggleChatPop)
+  onscroll(document, toggleChatPop)
+
+  
+}
+
+
 })()

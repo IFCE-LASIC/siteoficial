@@ -1,0 +1,40 @@
+#chat-pop{
+    display: flex;
+    width: 23vw;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 995;
+    transition: all 0.4s;
+}
+
+#chat-pop.active {
+    visibility: visible;
+    opacity: 1;
+}
+#chat-pop img{
+    width: 22vw;
+    cursor: pointer;
+
+}
+.chat-popup-close{
+    visibility: hidden;
+    opacity: 0;
+    color: rgb(31, 31, 31);
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 1em;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    margin-left: 10px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.chat-popup-close.active{
+    visibility: visible;
+    opacity: 1;
+}
+
