@@ -160,8 +160,6 @@
     })
   });
 
-
-
   document.addEventListener("DOMContentLoaded", function () {
     var swiper = new Swiper(".swiper-container", {
       loop: true, 
@@ -172,11 +170,11 @@
     });
   });
 
-
 //  ===== Chat =====
 let chatPop = select('#chat-pop')
 const closeChatPop = select(".chat-popup-close")
 let dontWannaHelp = false
+const chatChatBox = select("#chat-box")
 
 if (chatPop) {
   const toggleChatPop = () => {
@@ -200,8 +198,22 @@ if (chatPop) {
   window.addEventListener('load', toggleChatPop)
   onscroll(document, toggleChatPop)
 
+  const openChat = ()=>{
+    chatPop.addEventListener("click", ()=>{
+      chatChatBox.classList.add('active')
+      chatPop.classList.remove('active')
+      closeChatPop.classList.remove('active')
+      dontWannaHelp = true
+    })
+    const sair = select(".chat-close")
+    sair.addEventListener("click", ()=>{
+      dontWannaHelp = false
+      chatChatBox.classList.remove('active')
+    })
+  }
+  window.addEventListener('load', openChat)
+  onscroll(document, openChat)
   
 }
-
 
 })()

@@ -438,7 +438,8 @@ li {
 
 @media (max-width: 990px) {
   #hero {
-    margin-top: 60px;
+    /* margin-top: 60px; */
+    height: 100vh;
   }
 }
 

@@ -1,6 +1,11 @@
+body{
+    height: 300vh;
+}
+
+
 #chat-pop{
     display: flex;
-    width: 23vw;
+    width: 14vw;
     position: fixed;
     visibility: hidden;
     opacity: 0;
@@ -15,7 +20,7 @@
     opacity: 1;
 }
 #chat-pop img{
-    width: 22vw;
+    width: 12vw;
     cursor: pointer;
 
 }
@@ -28,7 +33,7 @@
     font-size: 1em;
     display: flex;
     position: fixed;
-    z-index: 999;
+    z-index: 996;
     margin-left: 10px;
     margin-top: 20px;
     transition: 0.3s;
@@ -36,5 +41,118 @@
 .chat-popup-close.active{
     visibility: visible;
     opacity: 1;
+}
+
+#chat-box{
+    display: flex;
+    width: 25vw;
+    height: 50vh;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 997;
+    transition: all 0.4s;
+}
+#chat-box.active{
+    visibility: visible;
+    opacity: 1;
+}
+#chat-backgrownd{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+#chat-cabecalho{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    align-self: baseline;
+    border-radius: 15px 15px 0px 0px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    /* padding: 5px 15px; */
+}
+#chat-cabecalho img{
+    width: 23%;
+    padding-left: 10px;
+}
+#chat-cabecalho i{
+    padding: 15px;
+    cursor: pointer;
+}
+#chat-chat{
+    width: 100%;
+    height: 70%;
+}
+#chat-input{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    align-self: flex-end;
+    height: 15%;
+    border-radius: 0px 0px 15px 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+#chat-input-div{
+    padding-left: 10px;
+}
+#chat-input-div input{
+    width: 90%;
+    height: 97%;
+    font-size: 1.2em;
+    border: none;
+}
+
+#chat-input-div input:focus{
+    outline: 0px;
+
+}
+#chat-submit-btn{
+    margin-right: 10px;
+    border: none;
+    background-color: white;
+
+
+}
+#chat-submit-btn i {
+    font-size: 1.8em;
+}
+
+/* ===============MIDIAS GIGANTES================== */
+@media (min-width: 1024px) {
+    #chat-pop img {
+        width: 27vw;
+    }
+    #chat-pop {
+        width: 29vw;
+    }
+    .chat-popup-close{
+        margin-left: 10px;
+        margin-top: 15px;
+    }
+}
+
+
+/* =========MIDIAS PEQUENAS================ */
+@media (max-width: 990px) {
+
+    #chat-pop img{
+        width: 38vw;
+    }
+    #chat-pop {
+        width: 40vw;
+    }
+    .chat-popup-close{
+        margin-left: 0px;
+        margin-top: 5px;
+    }
 }
 
