@@ -8,11 +8,12 @@ body{
 .active{
     visibility: visible !important; 
     opacity: 1 !important;
+    display: flex !important;
 }
 
 /* POP UP CHAT BALLOON */
 #chat-pop{
-    display: flex;
+    display: none;
     width: 14vw;
     position: fixed;
     visibility: hidden;
@@ -27,23 +28,26 @@ body{
     cursor: pointer;
 }
 .chat-popup-close{
+    display: none;
     visibility: hidden;
     opacity: 0;
+    z-index: 333;
     color: rgb(31, 31, 31);
     cursor: pointer;
     font-weight: bolder;
     font-size: 1em;
-    display: flex;
     position: fixed;
     margin-left: 10px;
     margin-top: 20px;
-    transition: 0.3s;
+}
+.chat-popup-close i :hover{
+    color: rgb(70, 70, 70);
 }
 
 
 /* CHAT BOX  */
 #chat-box{
-    display: flex;
+    display: none;
     width: 25vw;
     height: 50vh;
     position: fixed;
@@ -85,35 +89,57 @@ body{
     font-size: 1.4em;
     margin-right: 20px;
 }
+#chat-cabecalho i:hover{
+    color: rgb(70, 70, 70);
+}
 
 /* CHAT INTERECTIONS SECTION */
 #chat-container{
     width: 100%;
     height: 70%;
     overflow-y: scroll;
-    
+    scrollbar-width: none;
+}
+#chat-container::-webkit-scrollbar{
+    display: none;
 }
 
 /* CHAT CONTTEXT */
 #chat-context{
+    display: none;
+    background-color: white;
     position: absolute;
     left: 0;
     top: 85%;
-    display: grid;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
     visibility: hidden;
     opacity: 0;
     width: 100%;
+    padding: 0px 10px;
     height: 20%;
+}
+.btn-context{
+    background-color: white;
+    height: 65%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.6em;
+}
+.btn-context:hover{
+    background-color: rgb(168, 168, 168);
 }
 
 /* CHAT INPUT */
 #chat-input{
-    display: flex;
+    display: none;
     position: absolute;
     z-index: 2;
     left: 0;
     top: 85%;
-
     background-color: white;
     width: 100%;
     height: 15%;
@@ -147,12 +173,19 @@ body{
 }
 #chat-submit-btn i {
     font-size: 1.8em;
+    cursor: pointer;
+    color: rgb(25, 25, 25);
+    transition: all 0.2s;
 }
+#chat-submit-btn i:hover{
+    color: rgb(70, 70, 70);
+}
+
 
 /* CHAT CHAT */
 #chat-chat{
-    padding: 15px;
     display: flex;
+    padding: 15px;
     box-sizing: border-box;
     width: 100%;
     flex-direction: column;
@@ -161,7 +194,7 @@ body{
 .msg{
     border-radius: 3px;
     padding: 10px;
-    max-width: 80%;
+    max-width: 70%;
     margin: 5px;
     word-wrap: break-word;
 }

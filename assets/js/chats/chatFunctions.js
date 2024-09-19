@@ -1,6 +1,7 @@
 import {createButton, createDiv} from './utils.js';
 
 const chatPop =  document.querySelector('#chat-pop')//primeiro popup de preicsa de ajuda?
+const chatImg =  document.querySelector('#img-pig')//primeiro popup de preicsa de ajuda?
 const closeChatPop = document.querySelector(".chat-popup-close")//botao de fechar o pop-up
 let flagDontWannaHelp = false//flag se o user ja fechou o popup
 const chatChatBox = document.querySelector("#chat-box")//div que o chat em si esta
@@ -10,7 +11,7 @@ let flagNeedContext = true//flag que verifica se é a primeira mensagem do bot o
 const toggleChatPop = () => {
 if (window.scrollY > 950 && !flagDontWannaHelp) {
     chatPop.classList.add('active')
-    chatPop.addEventListener('mouseenter', (who)=>{
+    chatPop.addEventListener('mouseenter', ()=>{
     closeChatPop.classList.add("active")
     closeChatPop.addEventListener("click",()=>{
         chatPop.classList.remove('active')
@@ -29,12 +30,13 @@ window.addEventListener('load', toggleChatPop);
 document.addEventListener("scroll", toggleChatPop);
 
 const openChat = ()=>{
-chatPop.addEventListener("click", ()=>{
+chatImg.addEventListener("click", ()=>{
     chatChatBox.classList.add('active')
     chatPop.classList.remove('active')
     closeChatPop.classList.remove('active')
     flagDontWannaHelp = true
     messageBalloon(true, "Olá! De que tipo de ajuda você precisa?")
+    toggleContextInput(true)
 
 })
 const sair = document.querySelector(".chat-close")
@@ -57,8 +59,7 @@ function messageBalloon(bot, msg){
     createDiv(id, classe, "#chat-chat");
 
     document.getElementById(`${id}`).textContent = msg;  
-    document.getElementById(`${id}`).classList.add("msg");    
-  
+    document.getElementById(`${id}`).classList.add("msg");
 }
 
 //DEFINE CONTEXT'S
@@ -104,12 +105,25 @@ function closeContext(){
         const enviar = document.querySelector("#chat-submit-btn")
         const inputChat = document.querySelector("#input-chatbox")
         enviar.addEventListener("click", ()=>{
+
+            if(inputChat.value !== '' && inputChat.value.trim() !== ''){ 
             messageBalloon(false, `${inputChat.value}`)
             //funciton fetch enviar mensagem
             // if(response.ok){
             //     messageBalloon(true, response.msg)
             // }
-            inputChat.value = ""
+            inputChat.value = ""}
+        })
+        inputChat.addEventListener('keydown', (event)=>{
+            if(event.key === 'Enter'){
+                if(inputChat.value !== '' && inputChat.value.trim() !== ''){
+                messageBalloon(false, `${inputChat.value}`)
+                //funciton fetch enviar mensagem
+                // if(response.ok){
+                //     messageBalloon(true, response.msg)
+                // }
+                inputChat.value = ""}
+            }
         })
 //     }
 // }
