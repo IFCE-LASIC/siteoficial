@@ -1,4 +1,4 @@
-import {createButton, createDiv} from './utils.js';
+import {createButton, createDiv, useFetch} from './utils.js';
 
 const chatPop =  document.querySelector('#chat-pop')//primeiro popup de preicsa de ajuda?
 const chatImg =  document.querySelector('#img-pig')//primeiro popup de preicsa de ajuda?
@@ -6,6 +6,8 @@ const closeChatPop = document.querySelector(".chat-popup-close")//botao de fecha
 let flagDontWannaHelp = false//flag se o user ja fechou o popup
 const chatChatBox = document.querySelector("#chat-box")//div que o chat em si esta
 let flagNeedContext = true//flag que verifica se é a primeira mensagem do bot ou nn
+const cookies = document.cookie;
+let sessionId = 0
 
 // SHOW OR NOT SHOW CHAT ON SCREEN
 const toggleChatPop = () => {
@@ -63,12 +65,12 @@ function messageBalloon(bot, msg){
 }
 
 //DEFINE CONTEXT'S
-function defineContext(){
-    const contextos = [{id: 1, name: 'alunos'}, {id: 2, name: 'laboratorios'}, {id: 3, name: 'professor'}]//contextos mokados para teste
-    if(contextos.length != 0){
-        contextos.map((conexto)=>{
-            createButton(`btn-context-${conexto.id}`, "btn-context",`${conexto.name}`, "#chat-context")
-    })
+async function defineContext(){
+    const contextos = await useFetch("get_context", 'GET', cookies)//[{id: 1, name: 'alunos'}, {id: 2, name: 'laboratorios'}, {id: 3, name: 'professor'}]//contextos mokados para teste
+    {if(contextos[0] && contextos[1] != []){
+        contextos[1].map((conexto)=>{
+            createButton(`${conexto.id}`, "btn-context",`${conexto.context}`, "#chat-context")
+    })}
 }}
 
 // SEMPRE MUDA O TIPO DE INPUT
@@ -84,53 +86,72 @@ function toggleContextInput(type){
 }}
 
 // SUBMIT CONTEXT
-function submitContext(){
+async function submitContext(){
     const btnsContextos = [...document.querySelectorAll(".btn-context")]
-    btnsContextos.map((btn)=>{
-        btn.addEventListener("click", ()=>{
+    btnsContextos.map(async (btn)=>{
+        btn.addEventListener("click", async ()=>{
             messageBalloon(false, `${btn.innerHTML}`)
-            // funcao de enviar contextos
+            const sessionIdObj = await useFetch("load_context", 'POST', cookies, {context_id: btn.id})
+            if(sessionIdObj[0] && sessionIdObj[1] != []){
+                sessionId = sessionIdObj[1].session_id;
+                messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
+            }
             toggleContextInput(false)
         })
     })}
 
 //CLOSE CONTEXT FUNCTION
-function closeContext(){
-    //fatch de fechar contexto
-    toggleContextInput(true)
+async function closeContext(){
+    const response = await useFetch("close_context", 'POST', cookies, {session_id: sessionId})
+    if(response[0] && response[1] != []){
+        if(response[1].status > 0){
+            messageBalloon(true, "Contexto Reiniciado!")
+            toggleContextInput(true)
+        }else{
+            messageBalloon(true, "Erro ao reiniciar contexto!")
+        }
+    }
 }
 
 // function chatInteraction(){
 //     if(!flagNeedContext){
         const enviar = document.querySelector("#chat-submit-btn")
         const inputChat = document.querySelector("#input-chatbox")
-        enviar.addEventListener("click", ()=>{
+        enviar.addEventListener("click", async ()=>{
 
             if(inputChat.value !== '' && inputChat.value.trim() !== ''){ 
             messageBalloon(false, `${inputChat.value}`)
-            //funciton fetch enviar mensagem
-            // if(response.ok){
-            //     messageBalloon(true, response.msg)
-            // }
+            const mensagem = await useFetch("send_message", 'POST', cookies, {session_id: sessionId, message: `${inputChat.value}`})
+            if(mensagem[0], mensagem[1] != []){
+                if(mensagem[1].status > 0){
+                    messageBalloon(true, mensagem[1].answer)
+                }else{
+                    messageBalloon(true, mensagem[1].status)
+                }
+            }
             inputChat.value = ""}
         })
-        inputChat.addEventListener('keydown', (event)=>{
+        inputChat.addEventListener('keydown', async (event)=>{
             if(event.key === 'Enter'){
                 if(inputChat.value !== '' && inputChat.value.trim() !== ''){
                 messageBalloon(false, `${inputChat.value}`)
-                //funciton fetch enviar mensagem
-                // if(response.ok){
-                //     messageBalloon(true, response.msg)
-                // }
+                const mensagem = await useFetch("send_message", 'POST', cookies, {session_id: sessionId, message: `${inputChat.value}`})
+                if(mensagem[0], mensagem[1] != []){
+                    if(mensagem[1].status > 0){
+                        messageBalloon(true, mensagem[1].answer)
+                    }else{
+                        messageBalloon(true, mensagem[1].status)
+                    }
+                }
                 inputChat.value = ""}
             }
         })
 //     }
 // }
 
-defineContext()
+await defineContext()
 toggleContextInput(true)
-submitContext()
+await submitContext()
 // chatInteraction()
 
 

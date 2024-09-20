@@ -1,4 +1,16 @@
-function useFetch(endpoit, metodo){
+async function useFetch(endpoit, metodo, authHeader, body = ''){
+    const initEnd = "http://localhost:5000/"
+    const response = await fetch(`${initEnd}${endpoit}`, {
+        headers: { "Content-Type": "application/json", Authorization: authHeader },
+        method: metodo,
+        body: body != ''? JSON.stringify(body): null
+    })
+    if(response.ok){
+        const obj = await response.json()
+        return [true, obj]
+    }else{
+        return [false, []]
+    }
     
 }
 function createDiv(id, classe, where){
@@ -20,4 +32,14 @@ function createButton(id, classe, inner, where){
     document.querySelector(where).appendChild(newButton)
 }
 
-export { useFetch, createDiv, createButton}
+// Para obter todos os cookies como uma string
+const allCookies = document.cookie;
+
+// Para acessar cookies específicos
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+export { useFetch, createDiv, createButton, getCookie}
