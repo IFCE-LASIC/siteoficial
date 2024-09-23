@@ -1,7 +1,7 @@
-async function useFetch(endpoit, metodo, authHeader, body = ''){
+async function useFetch(endpoit, metodo, body = ''){
     const initEnd = "http://localhost:5000/"
     const response = await fetch(`${initEnd}${endpoit}`, {
-        headers: { "Content-Type": "application/json", Authorization: authHeader },
+        headers: { "Content-Type": "application/json"},
         method: metodo,
         body: body != ''? JSON.stringify(body): null
     })
