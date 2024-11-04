@@ -66,10 +66,10 @@ function messageBalloon(bot, msg){
 
 //DEFINE CONTEXT'S
 async function defineContext(){
-    const contextos = await useFetch("get_context", 'GET')//[{id: 1, name: 'alunos'}, {id: 2, name: 'laboratorios'}, {id: 3, name: 'professor'}]//contextos mokados para teste
+    const contextos = await useFetch("contexts/get_contexts", 'GET')//[{id: 1, name: 'alunos'}, {id: 2, name: 'laboratorios'}, {id: 3, name: 'professor'}]//contextos mokados para teste
     {if(contextos[0] && contextos[1] != []){
         contextos[1].map((conexto)=>{
-            createButton(`${conexto.id}`, "btn-context",`${conexto.context}`, "#chat-context")
+            createButton(`${conexto.id}`, "btn-context",`${conexto.name}`, "#chat-context")
     })}
 }}
 
@@ -91,9 +91,9 @@ async function submitContext(){
     btnsContextos.map(async (btn)=>{
         btn.addEventListener("click", async ()=>{
             messageBalloon(false, `${btn.innerHTML}`)
-            const sessionIdObj = await useFetch("load_context", 'POST',{context_id: btn.id})
+            const sessionIdObj = await useFetch(`chatbot/start_connection?context_id=${btn.id}&action_id=1`, 'POST')
             if(sessionIdObj[0] && sessionIdObj[1] != []){
-                sessionId = sessionIdObj[1].session_id;
+                sessionId = sessionIdObj[1];
                 messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
             }
             toggleContextInput(false)
@@ -102,7 +102,7 @@ async function submitContext(){
 
 //CLOSE CONTEXT FUNCTION
 async function closeContext(){
-    const response = await useFetch("close_context", 'POST', {session_id: sessionId})
+    const response = await useFetch(`chatbot/close_connection?session_id=${sessionId}`, 'POST')
     if(response[0] && response[1] != []){
         if(response[1].status > 0){
             messageBalloon(true, "Contexto Reiniciado!")
@@ -121,13 +121,9 @@ async function closeContext(){
 
             if(inputChat.value !== '' && inputChat.value.trim() !== ''){ 
             messageBalloon(false, `${inputChat.value}`)
-            const mensagem = await useFetch("send_message", 'POST', {session_id: sessionId, message: `${inputChat.value}`})
-            if(mensagem[0], mensagem[1] != []){
-                if(mensagem[1].status > 0){
-                    messageBalloon(true, mensagem[1].answer)
-                }else{
-                    messageBalloon(true, mensagem[1].status)
-                }
+            const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${inputChat.value}`, 'POST')
+            if(mensagem[0]){
+                messageBalloon(true, mensagem[1])
             }
             inputChat.value = ""}
         })
@@ -135,13 +131,9 @@ async function closeContext(){
             if(event.key === 'Enter'){
                 if(inputChat.value !== '' && inputChat.value.trim() !== ''){
                 messageBalloon(false, `${inputChat.value}`)
-                const mensagem = await useFetch("send_message", 'POST', {session_id: sessionId, message: `${inputChat.value}`})
-                if(mensagem[0], mensagem[1] != []){
-                    if(mensagem[1].status > 0){
-                        messageBalloon(true, mensagem[1].answer)
-                    }else{
-                        messageBalloon(true, mensagem[1].status)
-                    }
+                const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${inputChat.value}`, 'POST')
+                if(mensagem[0]){
+                    messageBalloon(true, mensagem[1])
                 }
                 inputChat.value = ""}
             }
