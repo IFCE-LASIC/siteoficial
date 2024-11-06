@@ -1,5 +1,5 @@
 async function useFetch(endpoit, metodo, body = ''){
-    const initEnd = "http://localhost:5000/"
+    const initEnd = "http://apillm.lasicifce.com.br"
     const response = await fetch(`${initEnd}${endpoit}`, {
         headers: { "Content-Type": "application/json"},
         method: metodo,

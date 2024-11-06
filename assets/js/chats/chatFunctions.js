@@ -121,7 +121,9 @@ async function closeContext(){
 
             if(inputChat.value !== '' && inputChat.value.trim() !== ''){ 
             messageBalloon(false, `${inputChat.value}`)
-            const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${inputChat.value}`, 'POST')
+            const test = inputChat.value;
+            inputChat.value = '';
+            const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${test}`, 'POST')
             if(mensagem[0]){
                 messageBalloon(true, mensagem[1])
             }
@@ -131,7 +133,9 @@ async function closeContext(){
             if(event.key === 'Enter'){
                 if(inputChat.value !== '' && inputChat.value.trim() !== ''){
                 messageBalloon(false, `${inputChat.value}`)
-                const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${inputChat.value}`, 'POST')
+                const test = inputChat.value;
+                inputChat.value = '';
+                const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${test}`, 'POST')
                 if(mensagem[0]){
                     messageBalloon(true, mensagem[1])
                 }
