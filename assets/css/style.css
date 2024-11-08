@@ -111,6 +111,12 @@ li {
   max-height: 40px;
 }
 
+@media (max-width: 992px) {
+  #header {
+    height: 60px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -432,7 +438,8 @@ li {
 
 @media (max-width: 990px) {
   #hero {
-    height: calc(100vh - 60px);
+    /* margin-top: 60px; */
+    height: 100vh;
   }
 }
 
@@ -442,7 +449,7 @@ li {
     line-height: 36px;
   }
 
-  #hero h5 {
+  #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -484,11 +491,12 @@ section {
 }
 
 #tech img {
-  max-width: 20%;
+  max-width: 30%;
   transition: all 0.4s ease-in-out;
   display: block;
   display: inline-block;
   padding: 15px 0;
+  filter: grayscale(100);
   width: 50px;
 }
 
@@ -516,7 +524,7 @@ section {
 
 @media (max-width: 768px) {
   .tech img {
-    max-width: 20%;
+    max-width: 40%;
   }
 }
 
@@ -528,7 +536,7 @@ section {
 
 @media (max-width: 576px) {
   #tech ul li {
-    flex: 1 0 45%;
+    flex: 1 0 100%;
   }
 }
 
