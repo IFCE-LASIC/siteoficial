@@ -94,7 +94,7 @@ async function submitContext(){
             const sessionIdObj = await useFetch(`chatbot/start_connection?context_id=${btn.id}&action_id=1`, 'POST')
             if(sessionIdObj[0] && sessionIdObj[1] != []){
                 sessionId = sessionIdObj[1];
-                messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
+                messageBalloon(true, `Ok! O que você quer saber sobre ${btn.innerHTML}?`)
             }
             toggleContextInput(false)
         })
@@ -104,7 +104,7 @@ async function submitContext(){
 async function closeContext(){
     const response = await useFetch(`chatbot/close_connection?session_id=${sessionId}`, 'POST')
     if(response[0] && response[1] != []){
-        if(response[1].status > 0){
+        if(response[1] != 0){
             messageBalloon(true, "Contexto Reiniciado!")
             toggleContextInput(true)
         }else{
