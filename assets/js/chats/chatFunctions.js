@@ -7,9 +7,11 @@ let flagDontWannaHelp = false//flag se o user ja fechou o popup
 const chatChatBox = document.querySelector("#chat-box")//div que o chat em si esta
 let flagNeedContext = true//flag que verifica se é a primeira mensagem do bot ou nn
 // const cookies = document.cookie;
-let sessionId = 0
 
 // SHOW OR NOT SHOW CHAT ON SCREEN
+
+let socket;
+
 const toggleChatPop = () => {
 if (window.scrollY > 950 && !flagDontWannaHelp) {
     chatPop.classList.add('active')
@@ -90,29 +92,16 @@ async function submitContext(){
     const btnsContextos = [...document.querySelectorAll(".btn-context")]
     btnsContextos.map(async (btn)=>{
         btn.addEventListener("click", async ()=>{
-            messageBalloon(false, `${btn.innerHTML}`)
-            const sessionIdObj = await useFetch(`chatbot/start_connection?context_id=${btn.id}&action_id=1`, 'POST')
-            if(sessionIdObj[0] && sessionIdObj[1] != []){
-                sessionId = sessionIdObj[1];
-                messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
-            }
+            socket = new WebSocket(`ws://localhost:8000/chatbot/ws/${btn.id}/1`);
             toggleContextInput(false)
+            messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
         })
     })}
 
 //CLOSE CONTEXT FUNCTION
 async function closeContext(){
-    const response = await useFetch(`chatbot/close_connection?session_id=${sessionId}`, 'POST')
-    if(response[0] && response[1] != []){
-        if(response[1].status > 0){
-            messageBalloon(true, "Contexto Reiniciado!")
-            toggleContextInput(true)
-        }else{
-            messageBalloon(true, "Erro ao reiniciar contexto!")
-        }
-    }
+    socket.close()
 }
-
 // function chatInteraction(){
 //     if(!flagNeedContext){
         const enviar = document.querySelector("#chat-submit-btn")
@@ -120,14 +109,17 @@ async function closeContext(){
         enviar.addEventListener("click", async ()=>{
 
             if(inputChat.value !== '' && inputChat.value.trim() !== ''){ 
-            messageBalloon(false, `${inputChat.value}`)
-            const test = inputChat.value;
-            inputChat.value = '';
-            const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${test}`, 'POST')
-            if(mensagem[0]){
-                messageBalloon(true, mensagem[1])
+              messageBalloon(false, `${inputChat.value}`)
+              const test = inputChat.value;
+              inputChat.value = '';
+              socket.send(test)
+              socket.addEventListener("message", (evento) => {
+                const mensagem = evento.data;
+                messageBalloon(true, mensagem)
+            });
+
+            inputChat.value = ""
             }
-            inputChat.value = ""}
         })
         inputChat.addEventListener('keydown', async (event)=>{
             if(event.key === 'Enter'){
@@ -135,10 +127,11 @@ async function closeContext(){
                 messageBalloon(false, `${inputChat.value}`)
                 const test = inputChat.value;
                 inputChat.value = '';
-                const mensagem = await useFetch(`chatbot/send_message?session_id=${sessionId}&message=${test}`, 'POST')
-                if(mensagem[0]){
-                    messageBalloon(true, mensagem[1])
-                }
+                socket.send(test)
+                socket.addEventListener("message", (evento) => {
+                  const mensagem = evento.data;
+                  messageBalloon(true, mensagem)
+                });
                 inputChat.value = ""}
             }
         })
