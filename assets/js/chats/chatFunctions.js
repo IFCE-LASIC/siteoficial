@@ -91,7 +91,7 @@ async function submitContext(){
     const btnsContextos = [...document.querySelectorAll(".btn-context")]
     btnsContextos.map(async (btn)=>{
         btn.addEventListener("click", async ()=>{
-            socket = new WebSocket(`ws://localhost:8000/chatbot/ws/${btn.id}/1`);
+            socket = new WebSocket(`ws://llm.lasicifce.com.br/chatbot/ws/${btn.id}/1`);
             socket.addEventListener("message", (evento) => {
                 const mensagem = evento.data;
                 messageBalloon(true, mensagem)
