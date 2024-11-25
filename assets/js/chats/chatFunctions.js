@@ -77,15 +77,14 @@ async function defineContext(){
 
 // SEMPRE MUDA O TIPO DE INPUT
 function toggleContextInput(type){
-    flagNeedContext = type
-    if(flagNeedContext){
+    if(type){
         document.querySelector("#chat-input").classList.remove("active")
         document.querySelector("#chat-context").classList.add("active")
-    }else{
-        document.querySelector("#chat-context").classList.remove("active")
-        document.querySelector("#chat-input").classList.add("active")
-
-}}
+        return  
+    }
+    document.querySelector("#chat-context").classList.remove("active")
+    document.querySelector("#chat-input").classList.add("active")
+}
 
 // SUBMIT CONTEXT
 async function submitContext(){
@@ -93,6 +92,10 @@ async function submitContext(){
     btnsContextos.map(async (btn)=>{
         btn.addEventListener("click", async ()=>{
             socket = new WebSocket(`ws://localhost:8000/chatbot/ws/${btn.id}/1`);
+            socket.addEventListener("message", (evento) => {
+                const mensagem = evento.data;
+                messageBalloon(true, mensagem)
+            });
             toggleContextInput(false)
             messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
         })
@@ -113,11 +116,6 @@ async function closeContext(){
               const test = inputChat.value;
               inputChat.value = '';
               socket.send(test)
-              socket.addEventListener("message", (evento) => {
-                const mensagem = evento.data;
-                messageBalloon(true, mensagem)
-            });
-
             inputChat.value = ""
             }
         })
@@ -128,10 +126,6 @@ async function closeContext(){
                 const test = inputChat.value;
                 inputChat.value = '';
                 socket.send(test)
-                socket.addEventListener("message", (evento) => {
-                  const mensagem = evento.data;
-                  messageBalloon(true, mensagem)
-                });
                 inputChat.value = ""}
             }
         })
