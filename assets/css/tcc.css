@@ -399,79 +399,103 @@ section {
 /*--------------------------------------------------------------
 #TCC Section
 --------------------------------------------------------------*/
-.tcc .tcc-item {
-  padding: 40px;
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.067);
+.section-title h2 {
+  /* padding-bottom: 0px; */
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.section {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.section-content {
+  display: none;
+  padding-top: 10px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.section-content.active {
+  display: block;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tcc-item {
   background: #fff;
-  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 30%;
+  min-width: 400px;
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s;
+  padding: 40px;
+  background: #fff;
+  margin-bottom: 10px;
 }
 
-.tcc .tcc-item .icon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  margin-bottom: 50px;
+.tcc-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.tcc .tcc-item .icon i {
-  color: var(--color-secondary);
-  font-size: 40px;
-  transition: ease-in-out 0.3s;
-  z-index: 2;
-  position: relative;
-  line-height: 1.8;
+.tcc-item a {
+  font-size: 14px;
+  color: #000000;
+  margin: 0;
+  line-height: 24px;
+  margin-bottom: 0;
+  text-decoration: none;
 }
 
-.tcc .tcc-item .icon:before {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: #f0f1f2;
-  border-radius: 50px;
-  z-index: 1;
-  top: 10px;
-  right: -15px;
-  transition: 0.3s;
+.tcc-item a:hover {
+  text-decoration: underline;
+  color: #328ef6;
 }
 
-.tcc .tcc-item .icon:before {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: #f0f1f2;
-  border-radius: 50px;
-  z-index: 1;
-  top: 10px;
-  right: -15px;
-  transition: 0.3s;
+.section-header.active .toggle-button {
+  transform: rotate(180deg);
 }
 
-.tcc .tcc-item h3 {
+/* Barra abaixo do titulo */
+.tcc-item h3 {
   color: var(--color-default);
   font-weight: 700;
   margin: 0 0 20px 0;
   padding-bottom: 8px;
-  font-size: 22px;
+  font-size: 18px;
   position: relative;
   display: inline-block;
   border-bottom: 4px solid #ebebed;
   transition: 0.3s;
 }
 
-.tcc .tcc-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-/* .tcc .tcc-item:hover .icon:before {
-  background: var(--color-primary);
-} */
-
-.tcc .tcc-item:hover h3 {
-  border-color: var(--color-primary);
+.tcc-item:hover h3 {
+  border-color: #0077FF;
 }
 
 /*--------------------------------------------------------------

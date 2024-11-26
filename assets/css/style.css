@@ -533,72 +533,83 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# Objective
 --------------------------------------------------------------*/
-.img-lab {
-  margin-bottom: 10px;
-  margin-top: 5px;
-  width: 100%;
-  height: auto;
+.objective {
+  padding: 60px 0;
 }
 
-@media (max-width: 1198px) {
+.objective .img-logo {
+  width: 380px;
+}
 
-  .col-xl-4,
-  .col-lg-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+/* .objective p {
+  color: #666;
+  line-height: 1.6;
+} */
 
-  .img-lab {
+.objective .link-history {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.objective .link-history:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1184px) {
+  .objective .img-logo {
     width: 100%;
-    height: auto;
+    max-width: 250px;
+    display: block;
+    margin: auto;
   }
 }
 
 /*--------------------------------------------------------------
-# Project
+# Activities
 --------------------------------------------------------------*/
-.project .icon-box {
+.activities .icon-box {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
   background: fff;
 }
 
-.project .icon-box .icon {
+.activities .icon-box .icon {
   margin-bottom: 10px;
 }
 
-.project .icon-box .icon i {
+.activities .icon-box .icon i {
   color: #47b2e4;
   font-size: 36px;
   transition: 0.3s;
 }
 
-.project .icon-box h4 {
+.activities .icon-box h4 {
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.project .icon-box h4 a {
+.activities .icon-box h4 a {
   color: #37517e;
   transition: ease-in-out 0.3s;
 }
 
-.project .icon-box p {
+.activities .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
   text-align: justify;
 }
 
-.project .icon-box:hover {
+.activities .icon-box:hover {
   transform: translateY(-10px);
 }
 
-.project .icon-box:hover h4 a {
+.activities .icon-box:hover h4 a {
   color: #47b2e4;
 }
 
