@@ -5,10 +5,6 @@ const chatImg =  document.querySelector('#img-pig')//primeiro popup de preicsa d
 const closeChatPop = document.querySelector(".chat-popup-close")//botao de fechar o pop-up
 let flagDontWannaHelp = false//flag se o user ja fechou o popup
 const chatChatBox = document.querySelector("#chat-box")//div que o chat em si esta
-let flagNeedContext = true//flag que verifica se é a primeira mensagem do bot ou nn
-// const cookies = document.cookie;
-
-// SHOW OR NOT SHOW CHAT ON SCREEN
 
 let socket;
 
@@ -56,14 +52,18 @@ window.addEventListener('load', openChat)
 
 
 // CREATE MESSAGE BALLOON FUNCTION
-function messageBalloon(bot, msg){
-    const id = new Date().getTime();
+function messageBalloon(bot, msg, loading){
+    let id = new Date().getTime();
+    if(loading){
+        id = "loading_id"
+    }
     const classe = bot?"msg-bot":"msg-user";
 
     createDiv(id, classe, "#chat-chat");
 
     document.getElementById(`${id}`).textContent = msg;  
     document.getElementById(`${id}`).classList.add("msg");
+    return id
 }
 
 //DEFINE CONTEXT'S
@@ -91,51 +91,52 @@ async function submitContext(){
     const btnsContextos = [...document.querySelectorAll(".btn-context")]
     btnsContextos.map(async (btn)=>{
         btn.addEventListener("click", async ()=>{
-            socket = new WebSocket(`ws://llm.lasicifce.com.br/chatbot/ws/${btn.id}/1`);
+            messageBalloon(false, `${btn.innerHTML}`)
+            socket = new WebSocket(`ws://localhost:8000/chatbot/ws/${btn.id}/1`);
             socket.addEventListener("message", (evento) => {
                 const mensagem = evento.data;
+                document.getElementById(`loading_id`)?.remove()
                 messageBalloon(true, mensagem)
             });
             toggleContextInput(false)
             messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
         })
     })}
-
 //CLOSE CONTEXT FUNCTION
 async function closeContext(){
     socket.close()
 }
-// function chatInteraction(){
-//     if(!flagNeedContext){
-        const enviar = document.querySelector("#chat-submit-btn")
-        const inputChat = document.querySelector("#input-chatbox")
-        enviar.addEventListener("click", async ()=>{
 
-            if(inputChat.value !== '' && inputChat.value.trim() !== ''){ 
-              messageBalloon(false, `${inputChat.value}`)
-              const test = inputChat.value;
-              inputChat.value = '';
-              socket.send(test)
-            inputChat.value = ""
-            }
-        })
-        inputChat.addEventListener('keydown', async (event)=>{
-            if(event.key === 'Enter'){
-                if(inputChat.value !== '' && inputChat.value.trim() !== ''){
-                messageBalloon(false, `${inputChat.value}`)
-                const test = inputChat.value;
-                inputChat.value = '';
-                socket.send(test)
-                inputChat.value = ""}
-            }
-        })
-//     }
-// }
+const enviar = document.querySelector("#chat-submit-btn")
+const inputChat = document.querySelector("#input-chatbox")
+enviar.addEventListener("click", async ()=>{
+
+    if(inputChat.value !== '' && inputChat.value.trim() !== ''){ 
+        messageBalloon(false, `${inputChat.value}`)
+        messageBalloon(true, "...", true)
+
+        const test = inputChat.value;
+        inputChat.value = '';
+        socket.send(test)
+    inputChat.value = ""
+    }
+})
+inputChat.addEventListener('keydown', async (event)=>{
+    if(event.key === 'Enter'){
+        if(inputChat.value !== '' && inputChat.value.trim() !== ''){
+        messageBalloon(false, `${inputChat.value}`)
+        messageBalloon(true, "...", true)
+
+        const test = inputChat.value;
+        inputChat.value = '';
+        socket.send(test)
+        inputChat.value = ""}
+    }
+})
 
 await defineContext()
 toggleContextInput(true)
 await submitContext()
-// chatInteraction()
 
 
 
