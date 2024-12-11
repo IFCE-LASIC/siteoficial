@@ -52,8 +52,8 @@ window.addEventListener('load', openChat)
 
 
 // CREATE MESSAGE BALLOON FUNCTION
-function messageBalloon(bot, msg, loading){
-    let id = new Date().getTime();
+function messageBalloon(bot = false, msg, loading, ids){
+    let id = ids? ids: new Date().getTime();
     if(loading){
         id = "loading_id"
     }
@@ -86,12 +86,13 @@ function toggleContextInput(type){
     document.querySelector("#chat-input").classList.add("active")
 }
 
+
 // SUBMIT CONTEXT
 async function submitContext(){
     const btnsContextos = [...document.querySelectorAll(".btn-context")]
     btnsContextos.map(async (btn)=>{
         btn.addEventListener("click", async ()=>{
-            messageBalloon(false, `${btn.innerHTML}`)
+            messageBalloon(false, `${btn.innerHTML}`, false, 99)
             socket = new WebSocket(`ws://localhost:8000/chatbot/ws/${btn.id}/1`);
             socket.addEventListener("message", (evento) => {
                 const mensagem = evento.data;
@@ -99,7 +100,7 @@ async function submitContext(){
                 messageBalloon(true, mensagem)
             });
             toggleContextInput(false)
-            messageBalloon(true, `Ok! O que vocẽ quer saber sobre ${btn.innerHTML}?`)
+            messageBalloon(true, `Ok! O que vocẽ deseja saber sobre ${btn.innerHTML}?`, false, 98)
         })
     })}
 //CLOSE CONTEXT FUNCTION
