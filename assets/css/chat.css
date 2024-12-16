@@ -219,8 +219,36 @@ body{
 
 
 
-/* +++++++++++++++++MIDIAQUERY+++++++++++++++++++ */
+/*AVALIATION HANDS*/
+.avaliation_div{
+    border-radius: 3px;
+    padding: 10px;
+    max-width: 70%;
+    margin: 5px;
+    word-wrap: break-word;
+    font-size: 0.8em;
+    color: aliceblue;
+}
 
+.ok_hand{
+    color: white;
+    transition: 0.3s;
+    margin: 0px 7px;
+}
+.ok_hand:hover{
+    color: rgb(168, 255, 137);
+}
+
+.not_ok_hand{
+    color: white;
+    transition:  0.3s;
+}
+.not_ok_hand:hover{
+    color: rgb(245, 135, 135);
+}
+
+
+/* +++++++++++++++++MIDIAQUERY+++++++++++++++++++ */
 
 /* ===============MIDIAS MEDIAS================== */
 @media screen and (min-width: 768px) and (max-width: 1200px) {
@@ -247,7 +275,6 @@ body{
     }
 
 }
-
 
 /* ===========MIDIAS GIGA =============== */
 @media screen and (min-width: 1200px) and (max-width: 1910px) {
@@ -280,7 +307,6 @@ body{
         font-size: 1.1em;
     }
 }
-
 
 /* ===========MIDIAS MEGAGIGA =============== */
 @media screen and (min-width: 1910px){
