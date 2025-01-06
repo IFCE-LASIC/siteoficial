@@ -45,7 +45,7 @@ function getCookie(name) {
 }
 
 //ADCIONA AS MAOZINHAS DE AVALIAÇAO
-function handsButtons(msgId, sectionId){
+function handsButtons(msgId){
     const envelopmentDiv = createDiv(`${msgId}-avaliation`, 'avaliation-div', `#chat-chat`)
 
     envelopmentDiv.innerHTML = "Avalie essa resposta: "
@@ -53,14 +53,14 @@ function handsButtons(msgId, sectionId){
     const okHand = document.createElement("i")
     okHand.setAttribute("class", "ok_hand bi bi-hand-thumbs-up-fill")
     okHand.addEventListener("click",  ()=>{
-        useFetch(`chatbot/feedback?status=true&?message_id=${msgId}&?session_id=${sectionId}`, 'POST')
+        useFetch(`chatbot/feedback?status=true&message_id=${msgId}`, 'POST')
         envelopmentDiv.remove()
     })
 
     const notOkHand = document.createElement("i")
     notOkHand.setAttribute("class", "not_ok_hand bi bi-hand-thumbs-down-fill")
     notOkHand.addEventListener("click",  ()=>{
-        useFetch(`chatbot/feedback?status=false&?message_id=${msgId}&?session_id=${sectionId}`, 'POST')
+        useFetch(`chatbot/feedback?status=false&message_id=${msgId}`, 'POST')
         envelopmentDiv.remove()
     })
     envelopmentDiv.appendChild(okHand)
