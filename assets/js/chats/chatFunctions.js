@@ -97,14 +97,14 @@ async function submitContext(){
     btnsContextos.map(async (btn)=>{
         btn.addEventListener("click", async ()=>{
             messageBalloon(false, `${btn.innerHTML}`,99, false)
-            socket = new WebSocket(`ws://localhost:8000/chatbot/ws/${btn.id}/1`);
+            socket = new WebSocket(`ws://localhost:8000/chatbot/ws/${btn.id}`);
             socket.addEventListener("message", (evento) => {
                 const response = JSON.parse(evento.data);
                 console.log(response)
                 document.getElementById(`loading_id`)?.remove()
                 messageBalloon(true, response.message, response.id)
                 if (response.message != 'Logado'){
-                    handsButtons(response.id, response.session_id)
+                    handsButtons(response.id)
                 }
             });
             toggleContextInput(false)
