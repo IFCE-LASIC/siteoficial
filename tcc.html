@@ -46,18 +46,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.html#hero">Início</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">História</a></li>
-          <li class="nav-link scrollto dropdown"><a href="#project"><span>Projetos</span> <i
-                class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="tcc.html">Artigos e TCC's</a></li>
-              <li><a href="ic.html">Iniciação Científica</a></li>
-              <li><a href="parcerias.html">Parcerias</a></li>
-              <li><a href="evento.html">Extensão e Eventos</a></li>
-            </ul>
-          <li><a class="nav-link scrollto" href="index.html#equipe">Equipe</a></li>
+          <li><a class="nav-link scrollto" href="index.html#objective">Objetivo</a></li>
+          <li><a class="nav-link scrollto" href="historia.html">História</a></li>
+          <li><a class="nav-link scrollto active" href="index.html#activities">Atividades</a></li>
+          <li><a class="nav-link scrollto" href="equipe.html">Equipe</a></li>
           <li><a class="nav-link scrollto" href="index.html#contact">Contato</a></li>
-        </ul>
+      </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
@@ -73,136 +67,130 @@
           <h2>ARTIGOS E TCC's</h2>
         </div>
 
-        <div class="row gy-4">
+        <div class="section">
+          <div class="section-header" onclick="toggleSection('scientific-articles')">
+            <h3>Artigos Científicos</h3>
+            <span class="toggle-button">▼</span>
+          </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-gamepad"></i>
+          <div id="scientific-articles" class="section-content active">
+
+            <div class="row">
+
+              <div class="tcc-item">
+                <h3>Desenvolvimento do jogo Vaquejada para Dispositivos Android, Utilizando como Motor Gráfico a Godot
+                  Engine</h3>
+                <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc2423-Trabalho/DESENVOLVIMENTO%20DO%20JOGO%20VAQUEJADA%20PARA%20DISPOSITIVOS%20ANDROID%20UTILIZANDO%20COMO%20MOTOR%20GR%C1FICO%20A%20GODOT%20ENGINE.pdf"
+                  target="_blank" class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-              <h3>Artigo</h3>
-              <p>Grana: Este jogo é apenas um protótipo que foi desenvolvido utilizando o motor de jogo (game engine)
-                Godot para dispositivos móveis que utilizam sistema operacional Android</p>
-              <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc3272-Trabalho/PIBITI_RF_GRANA.pdf" target="_blank"
-                class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-clock"></i>
+              <div class="tcc-item">
+                <h3>A desinformatização dos Empreendimentos Hoteleiros no Município de Canindé-CE</h3>
+                <a href="https://drive.google.com/file/d/1Wu87b71SpKqi9AT1p4Id-A7GPWgLIO-c/view" target="_blank"
+                  class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-              <h3>TCC</h3>
-              <p>SISHORA - Sistema de Gerenciamento de Atividades Complementares</p>
-              <a href="https://drive.google.com/file/d/1Gcmwf8G62ChSESMYhbl_pv5Kx-J1isMI/view" target="_blank"
-                class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-hotel"></i>
+              <div class="tcc-item">
+                <h3>Desenvolvimento de um jogo visando ensinar Educação Financeira para crianças da Zona Rural</h3>
+                <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc3777-Trabalho/DESENVOLVIMENTO%20DE%20UM%20JOGO%20VISANDO%20ENSINAR%20EDUCA%C7%C3O%20FINANCEIRA%20PARA%20CRIAN%C7AS%20DA%20ZONA%20RURAL.pdf"
+                  target="_blank" class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-              <h3>Artigo</h3>
-              <p>A desinformatização dos Empreendimentos Hoteleiros no Município de Canindé-CE</p>
-              <a href="https://drive.google.com/file/d/1Wu87b71SpKqi9AT1p4Id-A7GPWgLIO-c/view" target="_blank"
-                class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-gamepad"></i>
+              <div class="tcc-item">
+                <h3>Comparativo entre Game Engines como Etapa Inicial para o Desenvolvimento de um Jogo de Educação
+                  Financeira</h3>
+                <a href="https://ceur-ws.org/Vol-2185/CtrlE_2018_paper_110.pdf" target="_blank" class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-              <h3>Artigo</h3>
-              <p>Desenvolvimento de um jogo visando ensinar Educação Financeira para crianças da Zona Rural</p>
-              <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc3777-Trabalho/DESENVOLVIMENTO%20DE%20UM%20JOGO%20VISANDO%20ENSINAR%20EDUCA%C7%C3O%20FINANCEIRA%20PARA%20CRIAN%C7AS%20DA%20ZONA%20RURAL.pdf"
-                target="_blank" class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-clock"></i>
+              <div class="tcc-item">
+                <h3>Escola do Dinheiro: Ensino de Gestão Financeira para crianças de Escolas em Zonas Rurais de Canindé
+                  com elementos agrícolas</h3>
+                <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc2475-Trabalho/Escola%20do%20dinheiro.pdf"
+                  target="_blank" class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-              <h3>TCC</h3>
-              <p>Análise dos Princípios e Técnicas de Usabilidade em um Sistema Institucional - SISHORA</p>
-              <a href="https://drive.google.com/file/d/1i93bJVluDecWw-DikAc6vhLiyJZSgYPI/view" target="_blank"
-                class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-gamepad"></i>
+              <div class="tcc-item">
+                <h3>Grana: Protótipo de um jogo que foi desenvolvido utilizando o motor de jogo (game engine)
+                  Godot para dispositivos móveis que utilizam sistema operacional Android.</h3>
+                <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc3272-Trabalho/PIBITI_RF_GRANA.pdf" target="_blank"
+                  class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-              <h3>Artigo</h3>
-              <p>Comparativo entre Game Engines como Etapa Inicial para o Desenvolvimento de um Jogo de Educação
-                Financeira</p>
-              <a href="https://ceur-ws.org/Vol-2185/CtrlE_2018_paper_110.pdf" target="_blank"
-                class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-money-bill-1-wave"></i>
-              </div>
-              <h3>Artigo</h3>
-              <p>Escola do Dinheiro: Ensino de Gestão Financeira para crianças de Escolas em Zonas Rurais de Canindé com
-                elementos agrícolas</p>
-              <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc2475-Trabalho/Escola%20do%20dinheiro.pdf"
-                target="_blank" class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
             </div>
-          </div><!-- End TCC Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-hat-cowboy"></i>
-              </div>
-              <h3>Artigo</h3>
-              <p>Desenvolvimento do jogo Vaquejada para Dispositivos Android, Utilizando como Motor Gráfico a Godot
-                Engine</p>
-              <a href="https://prpi.ifce.edu.br/nl/_lib/file/doc2423-Trabalho/DESENVOLVIMENTO%20DO%20JOGO%20VAQUEJADA%20PARA%20DISPOSITIVOS%20ANDROID%20UTILIZANDO%20COMO%20MOTOR%20GR%C1FICO%20A%20GODOT%20ENGINE.pdf"
-                target="_blank" class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-money-bill-1-wave"></i>
-              </div>
-              <h3>TCC</h3>
-              <p>Análise de Questionários de Validação do Jogo "Grana": Uma Ferramenta Tecnológica de Auxílio no Ensino
-                de Gestão Financeira com Contexto Rural</p>
-              <a href="https://drive.google.com/file/d/1-RuM_pH-Mx1ZZy7kD9DDkQ3F1hRKH6sb/view" target="_blank"
-                class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="tcc-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-hat-cowboy"></i>
-              </div>
-              <h3>TCC</h3>
-              <p>Valeu Boi: Desenvolvimento de um Jogo de Vaquejada para Dispositivos Android</p>
-              <a href="https://drive.google.com/file/d/18ELdUMZbpOW32FdkJIP4i3NPSWqwYR7w/view" target="_blank"
-                class="readmore stretched-link">Leia mais <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End TCC Item -->
-
+          </div>
         </div>
 
-      </div>
+        <div class="section">
+
+          <div class="section-header" onclick="toggleSection('tccs')">
+            <h3>TCC's</h3>
+            <span class="toggle-button">▼</span>
+          </div>
+
+          <div id="tccs" class="section-content active">
+
+            <div class="row">
+
+              <div class="tcc-item">
+                <h3>SISHORA - Sistema de Gerenciamento de Atividades Complementares</h3>
+                <a href="https://drive.google.com/file/d/1Gcmwf8G62ChSESMYhbl_pv5Kx-J1isMI/view" target="_blank"
+                  class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="tcc-item">
+                <h3>SISHORA - Análise dos Princípios e Técnicas de Usabilidade em um Sistema Institucional</h3>
+                <a href="https://drive.google.com/file/d/1i93bJVluDecWw-DikAc6vhLiyJZSgYPI/view" target="_blank"
+                  class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="tcc-item">
+                <h3>Valeu Boi: Desenvolvimento de um Jogo de Vaquejada para Dispositivos Android</h3>
+                <a href="https://drive.google.com/file/d/18ELdUMZbpOW32FdkJIP4i3NPSWqwYR7w/view" target="_blank"
+                  class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="tcc-item">
+                <h3>Análise de Questionários de Validação do Jogo "Grana": Uma Ferramenta Tecnológica de Auxílio no
+                  Ensino
+                  de Gestão Financeira com Contexto Rural</h3>
+                <a href="https://drive.google.com/file/d/1-RuM_pH-Mx1ZZy7kD9DDkQ3F1hRKH6sb/view" target="_blank"
+                  class="read-more">
+                  <span>Leia mais</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
     </section><!-- End TCC Section -->
 
   </main><!-- End #main -->
@@ -234,6 +222,13 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.classList.toggle('active');
+    }
+  </script>
 
 </body>
 
